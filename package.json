@@ -1,0 +1,20 @@
+{
+  "name": "mongo-express",
+  "version": "1.0.0",
+  "description": "mongodb + express basic crud api",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.13",
+    "nodemon": "^2.0.6"
+  }
+}
