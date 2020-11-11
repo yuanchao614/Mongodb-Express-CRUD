@@ -26,7 +26,7 @@ Return results: []
 ```
 methods: GET
 URL: http://localhost:3000/api/v1/user/<id>
-Return results: {}
+Return results: []
 ```
 
 - create one
@@ -70,4 +70,4 @@ Return results: {}
 ```
 
 ### mongodb插件mongoose
-![https://www.npmjs.com/package/mongoose](https://www.npmjs.com/package/mongoose)
+[https://www.npmjs.com/package/mongoose](https://www.npmjs.com/package/mongoose)
