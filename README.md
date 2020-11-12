@@ -9,6 +9,8 @@
 ```bash
 git clone 
 
+cd Mongodb-Express-CRUD
+
 npm install
 
 npm run dev
