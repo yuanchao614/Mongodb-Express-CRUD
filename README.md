@@ -82,7 +82,7 @@ Return results: {}
 
 ```
 methods: POST
-URL: http://localhost:3000/api/v1/auoth/signup
+URL: http://localhost:3000/api/v1/auth/signup
 body: {
 userName,
 email,
@@ -97,7 +97,7 @@ token
 
 ```
 methods: POST
-URL: http://localhost:3000/api/v1/auoth/login
+URL: http://localhost:3000/api/v1/auth/login
 body: {
 email,
 passWord
