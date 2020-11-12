@@ -14,6 +14,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    createDate: {
+        type: Date,
+        default: Date.now()
+      }
   });
 
   const User = mongoose.model('user', userSchema) // 这里的user相当于mongodb数据库集合（表）

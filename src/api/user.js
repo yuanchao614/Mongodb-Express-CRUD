@@ -1,10 +1,11 @@
 const express = require('express');
 const User = require('../model/userModel')
+const auth = require('../middleware/auth')
 
 const router = express.Router();
 
 // query all
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     try {
         const results = await User.find()
         res.send(results)
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
 
 
 // query one
-router.get('/:id', async (req, res) => {
+router.get('/:id', auth, async (req, res) => {
     const id = req.params.id;
     try {
         const result = await User.findById(id)
@@ -26,7 +27,7 @@ router.get('/:id', async (req, res) => {
 })
 
 // create one
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
     const user = new User({
         userName: req.body.userName,
         passWord: req.body.passWord,
@@ -41,7 +42,7 @@ router.post('/', async (req, res) => {
 })
 
 // update one
-router.put('/:id', async (req, res) => {
+router.put('/:id', auth, async (req, res) => {
     const {
         id
     } = req.params;
@@ -62,7 +63,7 @@ router.put('/:id', async (req, res) => {
 })
 
 // delete one
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
     const id = req.params.id;
     try {
         const result = await User.deleteOne({
