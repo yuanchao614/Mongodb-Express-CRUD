@@ -40,13 +40,13 @@ Return results:
 - query by id
 
 ```
-header: 带token
+header: token
 methods: GET
 URL: http://localhost:3000/api/v1/user/<id>
 Return results: []
 ```
 
-![根据ID查询数据](./statics/images/queryUserDataByUserId.png)
+![根据ID查询数据](/statics/images/queryUserDataByUserId.png)
 
 - create one
 
@@ -67,7 +67,7 @@ Return results:
 }
 ```
 
-![新增数据](./statics/images/createUser.png)
+![新增数据](/statics/images/createUser.png)
 
 - update one
 
@@ -90,7 +90,7 @@ Return results:
 
 ```
 
-![更新数据](./statics/images/updateUser.png)
+![更新数据](/statics/images/updateUser.png)
 
 
 - delete one
@@ -104,7 +104,7 @@ Return results: {}
 
 ```
 
-![删除数据](./statics/images/deleteUser.png)
+![删除数据](/statics/images/deleteUser.png)
 
 
 - signup
@@ -144,7 +144,7 @@ msg: ''
 }
 ```
 
-![用户登录](./statics/images/login.png)
+![用户登录](/statics/images/login.png)
 
 
 ### mongodb插件mongoose
