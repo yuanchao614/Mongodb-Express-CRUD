@@ -68,7 +68,13 @@ router.post('/signup', [
                 (err, token) => {
                     if (err) throw err;
                     res.status(200).json({
-                        token
+                        data: {
+                            id: user._id,
+                            userName: user.userName,
+                            email: user.email
+                        },
+                        token,
+                        msg: 'Registered user successfully!'
                     });
                 }
             );
@@ -131,7 +137,13 @@ router.post(
                 (err, token) => {
                     if (err) throw err;
                     res.status(200).json({
-                        token
+                        token,
+                        data: {
+                            id: user._id,
+                            userName: user.userName,
+                            email: user.email
+                        },
+                        msg: 'Login successful!'
                     });
                 }
             );
