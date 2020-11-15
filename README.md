@@ -146,7 +146,26 @@ msg: ''
 
 ![用户登录](/statics/images/login.png)
 
+### 插件
 
-### mongodb插件mongoose
+* mongodb插件`mongoose`
+
 [https://www.npmjs.com/package/mongoose](https://www.npmjs.com/package/mongoose)
+
+* `bcryptjs`加密插件 
+
+[bcryptjs](https://www.npmjs.com/package/bcrypt)
+
+* `jsonwebtoken`生成token插件
+
+[jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+
+* `nodemon`自动更新插件
+
+[nodemon](https://www.npmjs.com/package/nodemon)
+
+* `morgan`api日志插件
+
+[morgan](https://www.npmjs.com/package/morgan)
+
 
