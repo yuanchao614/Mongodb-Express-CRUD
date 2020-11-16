@@ -10,7 +10,7 @@ router.get('/', auth, async (req, res) => {
     console.log(req.query);
     try {
         const userData = await User.find().limit(Number(pageSize)).skip(Number(pageIndex) * Number(pageSize));
-        const total = await User.count();
+        const total = await User.countDocuments();
 
         res.send({
             data: userData,
@@ -18,7 +18,7 @@ router.get('/', auth, async (req, res) => {
             msg: 'Query user data successfully'
         })
     } catch (error) {
-        res.send('error')
+        res.send('error msg')
     }
 })
 
@@ -33,7 +33,7 @@ router.get('/:id', auth, async (req, res) => {
             msg: 'Query data according to user id succeeded!'
         })
     } catch (error) {
-        res.send('error')
+        res.send('error msg')
     }
 })
 
@@ -96,6 +96,66 @@ router.delete('/:id', auth, async (req, res) => {
         })
     } catch (error) {
         res.send('error')
+    }
+})
+
+// 根据createDate字段获取年月日数据统计
+router.get('/query/querybyDate', async (req, res) => {
+    try {
+        const data = await User.aggregate([{
+                $group: {
+                    _id: {
+                        year: {
+                            $year: "$createDate"
+                        },
+                        month: {
+                            $month: "$createDate"
+                        },
+                        day: {
+                            $dayOfMonth: "$createDate"
+                        }
+                    },
+                    count: {
+                        $sum: 1
+                    }
+                },
+
+            },
+            {
+                $group: {
+                    _id: {
+                        year: "$_id.year",
+                        month: "$_id.month"
+                    },
+                    dailyData: {
+                        $push: {
+                            day: "$_id.day",
+                            count: "$count"
+                        }
+                    }
+                }
+            },
+            {
+                $group: {
+                    _id: {
+                        year: "$_id.year"
+                    },
+                    monthlyData: {
+                        $push: {
+                            month: "$_id.month",
+                            dailyData: "$dailyData"
+                        }
+                    },
+                }
+            },
+
+        ]);
+        res.send({
+            data,
+            msg: 'Data statistics obtained successfully!'
+        })
+    } catch (error) {
+        console.log(error);
     }
 })
 
