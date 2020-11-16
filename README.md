@@ -146,6 +146,20 @@ msg: ''
 
 ![用户登录](/statics/images/login.png)
 
+- query by userData count by createDate
+
+```
+header: token
+methods: GET
+URL: http://localhost:3000/api/v1/user/query/querybyDate
+Return results: {
+  data: [],
+  msg: ''
+}
+```
+
+![查询用户统计信息](/statics/images/userYearMontDayCount.png)
+
 ### 插件
 
 * mongodb插件`mongoose`
