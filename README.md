@@ -7,7 +7,7 @@
 ### setUp
 
 ```bash
-git clone 
+git clone https://github.com/yuanchao614/Mongodb-Express-CRUD.git
 
 cd Mongodb-Express-CRUD
 
